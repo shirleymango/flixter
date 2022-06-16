@@ -12,17 +12,16 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (nonatomic, strong) NSArray *myArray;
+@property (nonatomic, strong) NSArray *movies;
 
 @end
 
 @implementation MovieViewController
-NSArray *test;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    test = @[@"a", @"b", @"c"];
+//    movies = @[@"a", @"b", @"c"];
         self.tableView.dataSource = self;
     
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=c98d20c9e7b2d705c4d6a5bcfd6687eb"];
@@ -34,16 +33,14 @@ NSArray *test;
            }
            else {
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-
-               // TODO: Get the array of movies
-               NSArray *myArray = dataDictionary[@"results"];
                
-               NSLog(@"%@", myArray);
-               
-               // TODO: Store the movies in a property to use elsewhere
-               
-               // TODO: Reload your table view data
-               
+               // Get the array of movies
+               self.movies = dataDictionary[@"results"];
+               for (NSDictionary *movie in self.movies) {
+                   NSLog(@"%@", movie[@"title"]);
+               }
+               // Reload your table view data
+               [self.tableView reloadData];
            }
        }];
     [task resume];
@@ -61,12 +58,14 @@ NSArray *test;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MovieTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"movieCell"];
-//    cell.textLabel.text = test[indexPath.row];
+    cell.title.text = self.movies[indexPath.row][@"title"];
+    cell.image.image = [UIImage imageNamed: self.movies[indexPath.row][@"poster_path"]];
+    cell.summary.text = self.movies[indexPath.row][@"overview"];
     
     return  cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return test.count;
+    return self.movies.count;
 }
 @end
