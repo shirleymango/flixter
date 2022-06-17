@@ -22,6 +22,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="BCl-l6-P0M">
+                                    <rect key="frame" x="0.0" y="198" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="131" id="sw9-wT-2Yy" customClass="MovieTableViewCell">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="131"/>
@@ -125,24 +129,6 @@
             </objects>
             <point key="canvasLocation" x="2544.9275362318845" y="92.410714285714278"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="JEJ-wD-zHc">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a6W-Wl-bkI" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H1Q-E7-lvq">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="AUl-Qs-v2d" kind="relationship" relationship="rootViewController" id="POy-wJ-hU6"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oVl-tJ-cG5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-296" y="74"/>
-        </scene>
         <!--Movies-->
         <scene sceneID="5Ao-VQ-tuu">
             <objects>
@@ -151,7 +137,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Rb-3r-LNZ">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Rb-3r-LNZ" customClass="g">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -176,7 +162,7 @@
                                             </subviews>
                                         </collectionViewCellContentView>
                                         <connections>
-                                            <outlet property="moviePoster" destination="ibc-HU-TjQ" id="bGG-o9-noD"/>
+                                            <outlet property="gridMoviePoster" destination="ibc-HU-TjQ" id="MXz-4e-GdE"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -187,7 +173,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Movies" id="m0j-Kj-GFD"/>
                     <connections>
-                        <outlet property="collectionView" destination="9Rb-3r-LNZ" id="n7n-aI-0AP"/>
+                        <outlet property="collectionView" destination="9Rb-3r-LNZ" id="9HP-Sm-8kh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QGs-WA-uaz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -210,7 +196,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fs9-TX-bHT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="216" y="-925"/>
+            <point key="canvasLocation" x="-194" y="-685"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="9by-LG-shg">
@@ -233,9 +219,6 @@
             <point key="canvasLocation" x="928.98550724637687" y="83.705357142857139"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="2l1-dh-Lls"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

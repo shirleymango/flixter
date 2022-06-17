@@ -50,11 +50,16 @@
                
                // Get the array of movies
                self.movies = dataDictionary[@"results"];
-               for (NSDictionary *movie in self.movies) {
-                   NSLog(@"%@", movie[@"title"]);
-               }
+//               for (NSDictionary *movie in self.movies) {
+//                   NSLog(@"%@", movie[@"title"]);
+//               }
+               
+               // Start the activity indicator
+               [self.activityIndicator startAnimating];
+               
                // Reload your table view data
                [self.tableView reloadData];
+               
            }
        }];
     [task resume];
