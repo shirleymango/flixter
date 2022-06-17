@@ -54,6 +54,7 @@
                                             <outlet property="image" destination="bJZ-LD-ufU" id="EzY-oy-cdl"/>
                                             <outlet property="summary" destination="8sK-KK-QsW" id="1Ym-MY-fOs"/>
                                             <outlet property="title" destination="G33-Cz-Wxm" id="Udi-7a-CuI"/>
+                                            <segue destination="U9D-bc-NmV" kind="show" id="hDT-3z-9g4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -62,13 +63,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="kAD-It-owL">
-                            <connections>
-                                <segue destination="U9D-bc-NmV" kind="show" id="cwY-oa-sDU"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="cSK-1P-mAp"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -127,7 +122,6 @@
                     <navigationItem key="navigationItem" id="hMr-ZK-9Qs"/>
                     <connections>
                         <outlet property="bigPoster" destination="b1P-zo-bnT" id="kGD-9d-qhS"/>
-                        <outlet property="bigPostr" destination="b1P-zo-bnT" id="srB-aF-P3n"/>
                         <outlet property="overview" destination="si1-Oo-7eB" id="JKo-mO-eId"/>
                         <outlet property="rating" destination="kXX-V5-cLI" id="w6f-f8-xef"/>
                         <outlet property="voteCount" destination="len-RL-Hl8" id="XP8-06-NAe"/>
