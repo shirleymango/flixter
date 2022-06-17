@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITableView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinningIndicator;
 
 @property (nonatomic, strong) NSArray *movies;
 
@@ -53,10 +54,7 @@
 //               for (NSDictionary *movie in self.movies) {
 //                   NSLog(@"%@", movie[@"title"]);
 //               }
-               
-               // Start the activity indicator
-               [self.activityIndicator startAnimating];
-               
+            
                // Reload your table view data
                [self.tableView reloadData];
                
@@ -95,11 +93,14 @@
                for (NSDictionary *movie in self.movies) {
                    NSLog(@"%@", movie[@"title"]);
                }
+               [self.spinningIndicator startAnimating];
                // Reload your table view data
                [self.tableView reloadData];
            }
         // Tell the refreshControl to stop spinning
         [self.refreshControl endRefreshing];
+        
+        [self.spinningIndicator stopAnimating];
        }];
     [task resume];
 }
