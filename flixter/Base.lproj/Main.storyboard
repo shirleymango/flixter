@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a6W-Wl-bkI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jcd-ig-k1W">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -67,6 +67,7 @@
                     <navigationItem key="navigationItem" id="cSK-1P-mAp"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="RwE-xf-p36" id="n6p-By-Mmw"/>
                         <outlet property="tableView" destination="RwE-xf-p36" id="rkM-20-ZsM"/>
                     </connections>
                 </viewController>
@@ -149,10 +150,45 @@
             </objects>
             <point key="canvasLocation" x="-296" y="74"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Movies-->
+        <scene sceneID="5Ao-VQ-tuu">
+            <objects>
+                <viewController id="qaJ-Te-fJh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Rk-iF-Uv8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="VI4-EU-Ig3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Movies" id="m0j-Kj-GFD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QGs-WA-uaz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1106" y="-621"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="sSx-fh-ePR">
+            <objects>
+                <tabBarController id="jcd-ig-k1W" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jqc-7L-JLp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="AUl-Qs-v2d" kind="relationship" relationship="viewControllers" id="2l1-dh-Lls"/>
+                        <segue destination="qaJ-Te-fJh" kind="relationship" relationship="viewControllers" id="mAS-5c-Zgi"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fs9-TX-bHT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="216" y="-925"/>
+        </scene>
+        <!--Now Playing-->
         <scene sceneID="9by-LG-shg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AUl-Qs-v2d" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Now Playing" id="T0e-id-jTa"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="PPS-tj-2xb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AKu-Nr-PmA">
@@ -169,6 +205,9 @@
             <point key="canvasLocation" x="928.98550724637687" y="83.705357142857139"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="2l1-dh-Lls"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

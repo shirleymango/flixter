@@ -10,7 +10,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DetailsViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UIImageView *bigPoster;
+@property (weak, nonatomic) IBOutlet UILabel *rating;
+@property (weak, nonatomic) IBOutlet UILabel *voteCount;
+@property (weak, nonatomic) IBOutlet UILabel *overview;
 @end
 
 NS_ASSUME_NONNULL_END

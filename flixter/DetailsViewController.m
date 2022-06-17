@@ -8,10 +8,6 @@
 #import "DetailsViewController.h"
 
 @interface DetailsViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *bigPoster;
-@property (weak, nonatomic) IBOutlet UILabel *rating;
-@property (weak, nonatomic) IBOutlet UILabel *voteCount;
-@property (weak, nonatomic) IBOutlet UILabel *overview;
 
 @end
 
