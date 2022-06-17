@@ -6,6 +6,7 @@
 //
 
 #import "DetailsViewController.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface DetailsViewController ()
 
@@ -14,9 +15,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     self.overview.text = self.detailDict[@"overview"];
     self.movieTitle.text = self.detailDict[@"title"];
+    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
+    NSString *posterURLString = self.detailDict[@"backdrop_path"];
+    NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
+    NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
+    [self.bigPoster setImageWithURL:posterURL];
 }
 /*
 #pragma mark - Navigation
