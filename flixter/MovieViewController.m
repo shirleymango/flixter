@@ -7,12 +7,15 @@
 
 #import "MovieViewController.h"
 #import "MovieTableViewCell.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface MovieViewController () <UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) NSArray *movies;
+
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -23,6 +26,14 @@
     // Do any additional setup after loading the view.
 //    movies = @[@"a", @"b", @"c"];
         self.tableView.dataSource = self;
+    [self fetchMovies];
+    
+    //Initialize a UIRefreshControl
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    //Bind the action to the refresh control
+    [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
+    //Insert the refresh control into the list
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
     
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=c98d20c9e7b2d705c4d6a5bcfd6687eb"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
@@ -56,12 +67,41 @@
 }
  */
 
+- (void)fetchMovies {
+    NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=c98d20c9e7b2d705c4d6a5bcfd6687eb"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+           if (error != nil) {
+               NSLog(@"%@", [error localizedDescription]);
+           }
+           else {
+               NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+               
+               // Get the array of movies
+               self.movies = dataDictionary[@"results"];
+               for (NSDictionary *movie in self.movies) {
+                   NSLog(@"%@", movie[@"title"]);
+               }
+               // Reload your table view data
+               [self.tableView reloadData];
+           }
+        // Tell the refreshControl to stop spinning
+        [self.refreshControl endRefreshing];
+       }];
+    [task resume];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MovieTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"movieCell"];
-    cell.title.text = self.movies[indexPath.row][@"title"];
-    cell.image.image = [UIImage imageNamed: self.movies[indexPath.row][@"poster_path"]];
-    cell.summary.text = self.movies[indexPath.row][@"overview"];
-    
+    NSDictionary *movie = self.movies[indexPath.row];
+    cell.title.text = movie[@"title"];
+    cell.summary.text = movie[@"overview"];
+    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
+    NSString *posterURLString = movie[@"poster_path"];
+    NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
+    NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
+    [cell.image setImageWithURL:posterURL];
     return  cell;
 }
 

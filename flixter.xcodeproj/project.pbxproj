@@ -19,6 +19,7 @@
 		85D10161285A5992002A5A06 /* flixterUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D10160285A5992002A5A06 /* flixterUITestsLaunchTests.m */; };
 		85D1016F285A736C002A5A06 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D1016E285A736C002A5A06 /* MovieViewController.m */; };
 		85D10172285A8E15002A5A06 /* MovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D10171285A8E15002A5A06 /* MovieTableViewCell.m */; };
+		85D101BF285C77F8002A5A06 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D101BE285C77F8002A5A06 /* DetailsViewController.m */; };
 		B2C088B3C425FF4532EA5914 /* Pods_flixterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0674328CA7D62E48A86A02 /* Pods_flixterTests.framework */; };
 		BC158EB38F3722BAEECB92F9 /* Pods_flixter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2740252FDB9461B7D2162FB /* Pods_flixter.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,8 @@
 		85D1016E285A736C002A5A06 /* MovieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
 		85D10170285A8E15002A5A06 /* MovieTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieTableViewCell.h; sourceTree = "<group>"; };
 		85D10171285A8E15002A5A06 /* MovieTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieTableViewCell.m; sourceTree = "<group>"; };
+		85D101BD285C77F8002A5A06 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		85D101BE285C77F8002A5A06 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		A2740252FDB9461B7D2162FB /* Pods_flixter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flixter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01B19BB488985FBF1D0A662 /* Pods-flixter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flixter.release.xcconfig"; path = "Target Support Files/Pods-flixter/Pods-flixter.release.xcconfig"; sourceTree = "<group>"; };
 		DAEFF05EEFD97717CEBD8A11 /* Pods-flixterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flixterTests.release.xcconfig"; path = "Target Support Files/Pods-flixterTests/Pods-flixterTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +153,8 @@
 				85D10146285A5992002A5A06 /* LaunchScreen.storyboard */,
 				85D10149285A5992002A5A06 /* Info.plist */,
 				85D1014A285A5992002A5A06 /* main.m */,
+				85D101BD285C77F8002A5A06 /* DetailsViewController.h */,
+				85D101BE285C77F8002A5A06 /* DetailsViewController.m */,
 			);
 			path = flixter;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 				85D10131285A5992002A5A06 /* Sources */,
 				85D10132285A5992002A5A06 /* Frameworks */,
 				85D10133285A5992002A5A06 /* Resources */,
+				81DF8967B8CA5CE8D00D3ED8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -229,6 +235,7 @@
 				85D10156285A5992002A5A06 /* Sources */,
 				85D10157285A5992002A5A06 /* Frameworks */,
 				85D10158285A5992002A5A06 /* Resources */,
+				9CDE5CCAA08D52C9F0B8C9D1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -332,6 +339,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		81DF8967B8CA5CE8D00D3ED8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-flixter/Pods-flixter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-flixter/Pods-flixter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-flixter/Pods-flixter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CDE5CCAA08D52C9F0B8C9D1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-flixter-flixterUITests/Pods-flixter-flixterUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-flixter-flixterUITests/Pods-flixter-flixterUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-flixter-flixterUITests/Pods-flixter-flixterUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D80DE020900002150A33D037 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -386,6 +427,7 @@
 				85D1013A285A5992002A5A06 /* AppDelegate.m in Sources */,
 				85D1014B285A5992002A5A06 /* main.m in Sources */,
 				85D1013D285A5992002A5A06 /* SceneDelegate.m in Sources */,
+				85D101BF285C77F8002A5A06 /* DetailsViewController.m in Sources */,
 				85D10172285A8E15002A5A06 /* MovieTableViewCell.m in Sources */,
 				85D1016F285A736C002A5A06 /* MovieViewController.m in Sources */,
 			);
