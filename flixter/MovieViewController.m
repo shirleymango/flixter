@@ -69,7 +69,7 @@
     DetailsViewController *detailVC = [segue destinationViewController];
     // Pass the selected object to the new view controller.
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-    detailVC.rating = self.movies[indexPath.row][@"vote_average"];
+    detailVC.detailDict = self.movies[indexPath.row];
 
 }
  

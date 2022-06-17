@@ -20,6 +20,8 @@
 		85D1016F285A736C002A5A06 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D1016E285A736C002A5A06 /* MovieViewController.m */; };
 		85D10172285A8E15002A5A06 /* MovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D10171285A8E15002A5A06 /* MovieTableViewCell.m */; };
 		85D101BF285C77F8002A5A06 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D101BE285C77F8002A5A06 /* DetailsViewController.m */; };
+		85D4D5EC285C915300ADA847 /* GridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D4D5EB285C915300ADA847 /* GridViewController.m */; };
+		85D4D5EF285C931800ADA847 /* MovieCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D4D5EE285C931800ADA847 /* MovieCollectionViewCell.m */; };
 		B2C088B3C425FF4532EA5914 /* Pods_flixterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0674328CA7D62E48A86A02 /* Pods_flixterTests.framework */; };
 		BC158EB38F3722BAEECB92F9 /* Pods_flixter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2740252FDB9461B7D2162FB /* Pods_flixter.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +69,10 @@
 		85D10171285A8E15002A5A06 /* MovieTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieTableViewCell.m; sourceTree = "<group>"; };
 		85D101BD285C77F8002A5A06 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		85D101BE285C77F8002A5A06 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		85D4D5EA285C915300ADA847 /* GridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GridViewController.h; sourceTree = "<group>"; };
+		85D4D5EB285C915300ADA847 /* GridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GridViewController.m; sourceTree = "<group>"; };
+		85D4D5ED285C931800ADA847 /* MovieCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCollectionViewCell.h; sourceTree = "<group>"; };
+		85D4D5EE285C931800ADA847 /* MovieCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCollectionViewCell.m; sourceTree = "<group>"; };
 		A2740252FDB9461B7D2162FB /* Pods_flixter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flixter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01B19BB488985FBF1D0A662 /* Pods-flixter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flixter.release.xcconfig"; path = "Target Support Files/Pods-flixter/Pods-flixter.release.xcconfig"; sourceTree = "<group>"; };
 		DAEFF05EEFD97717CEBD8A11 /* Pods-flixterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flixterTests.release.xcconfig"; path = "Target Support Files/Pods-flixterTests/Pods-flixterTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +161,10 @@
 				85D1014A285A5992002A5A06 /* main.m */,
 				85D101BD285C77F8002A5A06 /* DetailsViewController.h */,
 				85D101BE285C77F8002A5A06 /* DetailsViewController.m */,
+				85D4D5EA285C915300ADA847 /* GridViewController.h */,
+				85D4D5EB285C915300ADA847 /* GridViewController.m */,
+				85D4D5ED285C931800ADA847 /* MovieCollectionViewCell.h */,
+				85D4D5EE285C931800ADA847 /* MovieCollectionViewCell.m */,
 			);
 			path = flixter;
 			sourceTree = "<group>";
@@ -427,6 +437,8 @@
 				85D1013A285A5992002A5A06 /* AppDelegate.m in Sources */,
 				85D1014B285A5992002A5A06 /* main.m in Sources */,
 				85D1013D285A5992002A5A06 /* SceneDelegate.m in Sources */,
+				85D4D5EF285C931800ADA847 /* MovieCollectionViewCell.m in Sources */,
+				85D4D5EC285C915300ADA847 /* GridViewController.m in Sources */,
 				85D101BF285C77F8002A5A06 /* DetailsViewController.m in Sources */,
 				85D10172285A8E15002A5A06 /* MovieTableViewCell.m in Sources */,
 				85D1016F285A736C002A5A06 /* MovieViewController.m in Sources */,

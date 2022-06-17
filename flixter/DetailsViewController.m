@@ -10,14 +10,14 @@
 @interface DetailsViewController ()
 
 @end
-
 @implementation DetailsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.overview.text = self.detailDict[@"overview"];
+    self.movieTitle.text = self.detailDict[@"title"];
 }
-
 /*
 #pragma mark - Navigation
 
