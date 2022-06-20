@@ -109,8 +109,8 @@
         // Tell the refreshControl to stop spinning
         [self.refreshControl endRefreshing];
         
-        [self.spinningIndicator stopAnimating];
        }];
+    [self.spinningIndicator stopAnimating];
     [task resume];
 }
 
