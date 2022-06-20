@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *bigPoster;
 @property (weak, nonatomic) IBOutlet UILabel *overview;
 @property (weak, nonatomic) IBOutlet UILabel *movieTitle;
+@property (weak, nonatomic) IBOutlet UIImageView *moviePoster;
 @property (nonatomic, strong) NSDictionary *detailDict;
 @end
 

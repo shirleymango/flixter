@@ -32,6 +32,8 @@
         self.tableView.dataSource = self;
     [self fetchMovies];
     
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
     //Initialize a UIRefreshControl
     self.refreshControl = [[UIRefreshControl alloc] init];
     //Bind the action to the refresh control

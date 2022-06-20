@@ -22,6 +22,11 @@
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
     [self.bigPoster setImageWithURL:posterURL];
+    NSString *smallposterURLString = self.detailDict[@"poster_path"];
+    NSString *fullSmallPosterURLString = [baseURLString stringByAppendingString:smallposterURLString];
+    NSURL *smallposterURL = [NSURL URLWithString:fullSmallPosterURLString];
+    [self.moviePoster setImageWithURL:smallposterURL];
+    
 }
 /*
 #pragma mark - Navigation
